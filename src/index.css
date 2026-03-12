@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  --color-heather: #8e7dbe;
+  --color-thistle: #d8bfd8;
+  --color-peat: #3d2b1f;
+  --color-loch: #005eb8;
+}
+
+/* Tailwind v4 class-based dark mode support */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply transition-colors duration-200 bg-white text-zinc-900;
+  }
+  
+  .dark body {
+    @apply bg-zinc-950 text-zinc-100;
+  }
+}
+
+.tartan-pattern {
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(0, 94, 184, 0.03) 0px, rgba(0, 94, 184, 0.03) 1px, transparent 1px, transparent 30px),
+    repeating-linear-gradient(-45deg, rgba(142, 125, 190, 0.03) 0px, rgba(142, 125, 190, 0.03) 1px, transparent 1px, transparent 30px);
+}
+
+
+.markdown-body h1 {
+  @apply text-3xl font-serif font-bold mb-4 mt-8 text-zinc-900 dark:text-zinc-100;
+}
+
+.markdown-body h2 {
+  @apply text-2xl font-serif font-semibold mb-3 mt-6 text-zinc-800 dark:text-zinc-200;
+}
+
+.markdown-body h3 {
+  @apply text-xl font-serif font-semibold mb-3 mt-5 text-zinc-800 dark:text-zinc-200;
+}
+
+.markdown-body p {
+  @apply mb-4 leading-relaxed text-zinc-700 dark:text-zinc-300;
+}
+
+.markdown-body ul {
+  @apply list-disc list-inside mb-4 ml-4;
+}
+
+.markdown-body ol {
+  @apply list-decimal list-inside mb-4 ml-4;
+}
+
+.markdown-body li {
+  @apply mb-2 text-zinc-700 dark:text-zinc-300;
+}
+
+.markdown-body strong {
+  @apply font-bold text-zinc-900 dark:text-zinc-100;
+}
+
+.markdown-body em {
+  @apply italic;
+}
+
+.markdown-body blockquote {
+  @apply border-l-4 border-loch pl-4 py-2 my-4 italic text-zinc-600 dark:text-zinc-400 bg-zinc-50 dark:bg-zinc-800/50 rounded-r;
+}
+
+.markdown-body a {
+  @apply text-loch hover:underline;
+}
+
+.markdown-body hr {
+  @apply my-8 border-zinc-200 dark:border-zinc-700;
+}
+
