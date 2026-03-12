@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
@@ -12,14 +12,16 @@ import TagPage from './pages/TagPage';
 
 function RedirectHandler() {
   const navigate = useNavigate();
+  const location = useLocation();
   
   useEffect(() => {
     const redirect = sessionStorage.getItem('redirect');
-    if (redirect) {
+    if (redirect && location.pathname === '/') {
       sessionStorage.removeItem('redirect');
-      navigate(redirect);
+      // Use navigate with replace to avoid history stack issues
+      navigate(redirect, { replace: true });
     }
-  }, [navigate]);
+  }, [navigate, location.pathname]);
   
   return null;
 }
