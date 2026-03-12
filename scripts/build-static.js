@@ -47,6 +47,17 @@ function copyImages() {
   console.log('Copied images to dist/images');
 }
 
+// Copy CNAME file for custom domain
+function copyCNAME() {
+  const cnameSrc = path.join(__dirname, '..', 'public', 'CNAME');
+  const cnameDest = path.join(outputDir, 'CNAME');
+  
+  if (fs.existsSync(cnameSrc)) {
+    fs.copyFileSync(cnameSrc, cnameDest);
+    console.log('Copied CNAME to dist');
+  }
+}
+
 // Generate posts.json
 function generatePosts() {
   if (!fs.existsSync(postsDir)) {
@@ -155,4 +166,5 @@ const posts = generatePosts();
 generatePages();
 generateRSS(posts);
 copyImages();
+copyCNAME();
 console.log('Static site data generated successfully!');
