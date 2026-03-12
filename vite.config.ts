@@ -21,6 +21,12 @@ export default defineConfig(({mode}) => {
     build: {
       outDir: 'dist',
       assetsDir: 'assets',
+      target: 'esnext',
+      rollupOptions: {
+        output: {
+          manualChunks: undefined,
+        },
+      },
     },
   };
 });
