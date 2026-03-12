@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RuggedScot</title>
-  <script>
-    // Redirect all 404s to index.html for SPA routing
-    sessionStorage.redirect = location.pathname + location.search;
-    location.replace('/' + location.search);
-  </script>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    .loading { display: flex; justify-content: center; align-items: center; height: 100vh; }
+  </style>
 </head>
 <body>
-  <p>Redirecting...</p>
+  <div class="loading">
+    <p>Loading...</p>
+  </div>
+  <script>
+    // Store the attempted path
+    sessionStorage.setItem('redirect', location.pathname + location.search);
+    
+    // Redirect to home - React Router will handle the redirect
+    location.replace('/');
+  </script>
 </body>
 </html>
