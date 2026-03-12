@@ -1,0 +1,70 @@
+[
+  {
+    "id": "welcome",
+    "title": "Welcome to my little hill on the web!",
+    "slug": "welcome-to-my-little-hill-on-the-web",
+    "excerpt": "If you enjoy a good moan, you will enjoy your visit",
+    "category": "Thoughts",
+    "date": "2026-03-12",
+    "image": "/images/blogs/irnbru.jpg",
+    "readTime": "2 min read",
+    "keywords": [
+      "welcome",
+      "thoughts",
+      "observations",
+      "society"
+    ],
+    "content": "\n# Welcome to my little hill on the web!\n\nAlright folks! Welcome to my little hill on the web. Well, not exactly a hill, but you get my drift!\n\nI've always wanted a home on the web but I've never really known what I wanted to say. I've always struggled to find the right words to express my thoughts and feelings. I do have ADHD so I'm not sure if this makes me struggle. \n\nLately I've been feeling really weird about life. Everything feels really off. Times feel strange, people seem strange.\n\nThe world feels like a total lie now. \"Does anyone else feel this way?\"\n\n- Food feels like poison\n- Life-saving medications are hidden from the public  \n- Government says one thing but does another\n- Our country is being overrun\n- We're becoming second-class citizens\n\nI'm not sure what to make of it all, but I'm going to try and make some sense of it all and moan about it here. Maybe you feel the same way?\n\nMaybe the Agenda 2030 is going to happen. The digital prison is already starting to be built here in the UK\n\nUch, I'm sure I'll have a right wee moan on here about that in the future, because it really is busting my tits!\n\nAnyways, if you read this and feel the same way, feel free to drop me a line. I'm always up for a good moan!."
+  },
+  {
+    "id": "shortbread",
+    "title": "The Perfect Traditional Scottish Shortbread",
+    "slug": "traditional-scottish-shortbread-recipe-butter-baking",
+    "excerpt": "My grandmother's secret recipe for the most buttery, melt-in-your-mouth shortbread you'll ever taste.",
+    "category": "Recipe",
+    "date": "2024-05-10",
+    "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?q=80&w=1000&auto=format&fit=crop",
+    "readTime": "5 min read",
+    "keywords": [
+      "Baking",
+      "Tradition",
+      "Recipe",
+      "Butter"
+    ],
+    "content": "\n# Traditional Scottish Shortbread\n\nShortbread is a staple of Scottish hospitality. This recipe has been in my family for three generations. The secret is high-quality butter and a bit of patience.\n\n## Ingredients\n*   250g Salted Butter (softened)\n*   125g Caster Sugar\n*   375g Plain Flour\n\n## Method\n1. Cream the butter and sugar together until smooth.\n2. Stir in the flour to get a smooth paste.\n3. Turn onto a work surface and gently roll out until 1cm thick.\n4. Cut into rounds or \"fingers\" and prick with a fork.\n5. Bake at 170°C for 15-20 minutes until pale golden.\n"
+  },
+  {
+    "id": "isle-of-skye",
+    "title": "A Weekend in the Isle of Skye",
+    "slug": "isle-of-skye-weekend-guide-fairy-pools-old-man-of-storr",
+    "excerpt": "Exploring the Fairy Pools, the Old Man of Storr, and the rugged beauty of the Quiraing.",
+    "category": "Travel",
+    "date": "2024-04-28",
+    "image": "https://images.unsplash.com/photo-1506377585622-bedcbb027afc?q=80&w=1000&auto=format&fit=crop",
+    "readTime": "12 min read",
+    "keywords": [
+      "Islands",
+      "Photography",
+      "Skye",
+      "Nature"
+    ],
+    "content": "\n# Magical Isle of Skye\n\nSkye is perhaps the most iconic of Scotland's islands. From the jagged peaks of the Cuillins to the turquoise waters of the Fairy Pools, every corner is a photographer's dream.\n\n## Highlights\n*   **The Old Man of Storr**: A steep hike but worth it for the otherworldly rock formations.\n*   **The Fairy Pools**: Crystal clear pools at the foot of the Black Cuillins.\n*   **Portree**: The charming capital with its colourful harbour.\n"
+  },
+  {
+    "id": "harris-tweed",
+    "title": "Restoring a Vintage Harris Tweed Loom",
+    "slug": "restoring-vintage-harris-tweed-loom-scottish-textile-heritage",
+    "excerpt": "My latest hobby project: bringing a piece of Scottish textile history back to life.",
+    "category": "Hobbies",
+    "date": "2024-04-12",
+    "image": "https://images.unsplash.com/photo-1528460033278-a6ba57020470?q=80&w=1000&auto=format&fit=crop",
+    "readTime": "10 min read",
+    "keywords": [
+      "Craft",
+      "Heritage",
+      "Weaving",
+      "Restoration"
+    ],
+    "content": "\n# The Art of Weaving\n\nHarris Tweed is protected by an Act of Parliament, and for good reason. It's a craft that requires skill, patience, and a deep connection to the land. I recently acquired a vintage loom...\n"
+  }
+]
