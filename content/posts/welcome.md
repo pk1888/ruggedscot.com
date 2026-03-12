@@ -32,3 +32,9 @@ Maybe the Agenda 2030 is going to happen. The digital prison is already starting
 Uch, I'm sure I'll have a right wee moan on here about that in the future, because it really is busting my tits!
 
 Anyways, if you read this and feel the same way, feel free to drop me a line. I'm always up for a good moan!.
+
+I'll use this blog to moan about whatever's on my mind, but I'll also try to write about some interesting things I come across around Scotland. 
+
+Maybe you'll find something interesting here. Maybe you won't. Either way, I'm glad you're here!
+
+See you in the next one
