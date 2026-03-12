@@ -21,10 +21,15 @@ export default defineConfig(({mode}) => {
     build: {
       outDir: 'dist',
       assetsDir: 'assets',
-      target: 'esnext',
+      target: 'es2015',
+      minify: 'esbuild',
+      sourcemap: false,
       rollupOptions: {
         output: {
           manualChunks: undefined,
+          entryFileNames: 'assets/[name].js',
+          chunkFileNames: 'assets/[name].js',
+          assetFileNames: 'assets/[name].[ext]'
         },
       },
     },

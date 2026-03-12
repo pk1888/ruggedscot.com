@@ -58,6 +58,17 @@ function copyCNAME() {
   }
 }
 
+// Copy .nojekyll file for GitHub Pages
+function copyNoJekyll() {
+  const nojekyllSrc = path.join(__dirname, '..', 'public', '.nojekyll');
+  const nojekyllDest = path.join(outputDir, '.nojekyll');
+  
+  if (fs.existsSync(nojekyllSrc)) {
+    fs.copyFileSync(nojekyllSrc, nojekyllDest);
+    console.log('Copied .nojekyll to dist');
+  }
+}
+
 // Generate posts.json
 function generatePosts() {
   if (!fs.existsSync(postsDir)) {
@@ -167,4 +178,5 @@ generatePages();
 generateRSS(posts);
 copyImages();
 copyCNAME();
+copyNoJekyll();
 console.log('Static site data generated successfully!');
