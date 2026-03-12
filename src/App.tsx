@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import React from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
@@ -10,27 +10,10 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import TagPage from './pages/TagPage';
 
-function RedirectHandler() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  
-  useEffect(() => {
-    const redirect = sessionStorage.getItem('redirect');
-    if (redirect && location.pathname === '/') {
-      sessionStorage.removeItem('redirect');
-      // Use navigate with replace to avoid history stack issues
-      navigate(redirect, { replace: true });
-    }
-  }, [navigate, location.pathname]);
-  
-  return null;
-}
-
 export default function App() {
   return (
     <HelmetProvider>
-      <BrowserRouter>
-        <RedirectHandler />
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
@@ -42,7 +25,7 @@ export default function App() {
             <Route path="contact" element={<ContactPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </HelmetProvider>
   );
 }
