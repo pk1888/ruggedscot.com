@@ -69,6 +69,17 @@ function copyNoJekyll() {
   }
 }
 
+// Copy 404.html for SPA routing
+function copy404() {
+  const notFoundSrc = path.join(__dirname, '..', 'public', '404.html');
+  const notFoundDest = path.join(outputDir, '404.html');
+  
+  if (fs.existsSync(notFoundSrc)) {
+    fs.copyFileSync(notFoundSrc, notFoundDest);
+    console.log('Copied 404.html to dist');
+  }
+}
+
 // Generate posts.json
 function generatePosts() {
   if (!fs.existsSync(postsDir)) {
@@ -179,4 +190,5 @@ generateRSS(posts);
 copyImages();
 copyCNAME();
 copyNoJekyll();
+copy404();
 console.log('Static site data generated successfully!');
