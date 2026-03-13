@@ -63,6 +63,8 @@ export default function Layout() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchSuggestions, setSearchSuggestions] = useState<Post[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -126,7 +128,32 @@ export default function Layout() {
       navigate(`/blog?search=${encodeURIComponent(searchQuery)}`);
       setIsSearchOpen(false);
       setSearchQuery('');
+      setShowSuggestions(false);
     }
+  };
+
+  const handleSearchInputChange = (value: string) => {
+    setSearchQuery(value);
+    setShowSuggestions(value.trim().length > 0);
+    
+    if (value.trim().length > 0) {
+      const filtered = posts.filter(post => 
+        post.title.toLowerCase().includes(value.toLowerCase()) ||
+        post.excerpt.toLowerCase().includes(value.toLowerCase()) ||
+        post.keywords?.some(keyword => keyword.toLowerCase().includes(value.toLowerCase()))
+      ).slice(0, 5); // Show max 5 suggestions
+      setSearchSuggestions(filtered);
+    } else {
+      setSearchSuggestions([]);
+    }
+  };
+
+  const handleSuggestionClick = (post: Post) => {
+    navigate(`/blog/${post.slug}`);
+    setIsSearchOpen(false);
+    setSearchQuery('');
+    setShowSuggestions(false);
+    setSearchSuggestions([]);
   };
 
   const getPostBySlug = (slug: string) => posts.find(p => p.slug === slug || p.id === slug);
@@ -296,26 +323,61 @@ export default function Layout() {
                 <div className="relative flex items-center">
                   <AnimatePresence>
                     {isSearchOpen && (
-                      <motion.form
-                        initial={{ width: 0, opacity: 0 }}
-                        animate={{ width: 200, opacity: 1 }}
-                        exit={{ width: 0, opacity: 0 }}
-                        onSubmit={handleSearch}
-                        className="mr-2"
-                      >
-                        <input
-                          type="text"
-                          placeholder="Search chronicles..."
-                          value={searchQuery}
-                          onChange={(e) => setSearchQuery(e.target.value)}
-                          className="w-full bg-zinc-100 dark:bg-zinc-800 border-none rounded-full px-4 py-1.5 text-xs focus:ring-1 focus:ring-loch outline-none"
-                          autoFocus
-                        />
-                      </motion.form>
+                      <motion.div className="relative mr-2">
+                        <motion.form
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: 200, opacity: 1 }}
+                          exit={{ width: 0, opacity: 0 }}
+                          onSubmit={handleSearch}
+                        >
+                          <input
+                            type="text"
+                            placeholder="Search chronicles..."
+                            value={searchQuery}
+                            onChange={(e) => handleSearchInputChange(e.target.value)}
+                            className="w-full bg-zinc-100 dark:bg-zinc-800 border-none rounded-full px-4 py-1.5 text-xs focus:ring-1 focus:ring-loch outline-none"
+                            autoFocus
+                          />
+                        </motion.form>
+                        
+                        {/* Search Suggestions Dropdown */}
+                        <AnimatePresence>
+                          {showSuggestions && searchSuggestions.length > 0 && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -10 }}
+                              className="absolute top-full mt-2 w-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg shadow-lg z-50 max-h-64 overflow-y-auto"
+                            >
+                              {searchSuggestions.map(post => (
+                                <button
+                                  key={post.id}
+                                  type="button"
+                                  onClick={() => handleSuggestionClick(post)}
+                                  className="w-full text-left px-3 py-2 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors border-b border-zinc-100 dark:border-zinc-800 last:border-b-0"
+                                >
+                                  <div className="text-xs font-medium text-zinc-900 dark:text-zinc-100 line-clamp-1">
+                                    {post.title}
+                                  </div>
+                                  <div className="text-xs text-zinc-500 dark:text-zinc-400 line-clamp-1">
+                                    {post.category}
+                                  </div>
+                                </button>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
                     )}
                   </AnimatePresence>
                   <button 
-                    onClick={() => setIsSearchOpen(!isSearchOpen)}
+                    onClick={() => {
+                      setIsSearchOpen(!isSearchOpen);
+                      if (!isSearchOpen) {
+                        setShowSuggestions(false);
+                        setSearchSuggestions([]);
+                      }
+                    }}
                     className="p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-500"
                   >
                     {isSearchOpen ? <X size={18} /> : <Search size={18} />}
