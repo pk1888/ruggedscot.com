@@ -183,9 +183,14 @@ export default function Layout() {
       ]
     },
     { label: 'Archive', path: '/archive' },
-    { label: 'Subscribe', path: '/subscribe' },
-    { label: 'About', path: '/about' },
-    { label: 'Contact', path: '/contact' }
+    {
+      label: 'More',
+      children: [
+        { label: 'About', path: '/about' },
+        { label: 'Contact', path: '/contact' },
+        { label: 'Subscribe', path: '/subscribe' },
+      ]
+    }
   ];
 
   return (
@@ -403,7 +408,7 @@ export default function Layout() {
                   />
                 </div>
                 <p className="text-zinc-500 dark:text-zinc-400 max-w-sm font-light leading-relaxed">
-                  Documenting the rugged life in the west. From Munro peaks to the kitchen oven, Paul shares his journey of returning to basics and staying vigilant in an increasingly controlled world.
+                  Documenting the rugged life in the west. From Munro peaks to the kitchen oven, I share my journey of returning to basics and staying vigilant in an increasingly controlled world.
                 </p>
               </div>
               <div>
