@@ -276,7 +276,7 @@ export default function TheLingoPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredWords.map((word) => (
           <div
-            key={`${word.word}-${searchTerm}`}
+            key={`${word.word}-${searchTerm}-${selectedCategory}`}
             className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 hover:shadow-lg transition-shadow"
           >
             <div className="flex items-start justify-between mb-2">
