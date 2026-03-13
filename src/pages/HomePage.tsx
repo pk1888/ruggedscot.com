@@ -52,7 +52,7 @@ export default function HomePage() {
         <img
           src="/images/home-hero.png"
           alt="Scottish Highlands"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-[0.85]"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-12">
