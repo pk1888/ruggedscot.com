@@ -103,7 +103,7 @@ export default function ContactPage() {
           <h3 className="font-serif font-bold text-xl mb-6">Get in Touch</h3>
           <div className="space-y-4">
             <p className="text-zinc-600 dark:text-zinc-400">
-              For any questions, collaborations, or just to say hello, reach out directly:
+              For any questions, collaborations, or just to say hello, reach out to me directly:
             </p>
             <div className="text-center">
               <a 
