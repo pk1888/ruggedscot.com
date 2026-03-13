@@ -172,6 +172,7 @@ export default function Layout() {
         { label: 'All Chronicles', path: '/blog' },
         { label: 'Travel', path: '/blog?category=Travel' },
         { label: 'Hill Climbing', path: '/blog?category=Hill%20Climbing' },
+        { label: 'Thoughts', path: '/blog?category=Thoughts' },
       ]
     },
     {
