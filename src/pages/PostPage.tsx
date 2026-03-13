@@ -5,6 +5,7 @@ import { Calendar, Clock, ArrowLeft, ChevronRight } from 'lucide-react';
 import Markdown from 'react-markdown';
 import { Helmet } from 'react-helmet-async';
 import { usePosts, cn } from '../components/Layout';
+import Gallery from '../components/Gallery';
 
 export default function PostPage() {
   const { posts, isLoading, getPostBySlug, getRelatedPosts } = usePosts();
@@ -108,6 +109,11 @@ export default function PostPage() {
       <div className="markdown-body prose dark:prose-invert max-w-none">
         <Markdown>{post.content}</Markdown>
       </div>
+
+      {/* Photo Gallery */}
+      {post.gallery && post.gallery.length > 0 && (
+        <Gallery photos={post.gallery} title="Photo Gallery" />
+      )}
 
       {/* Author Box */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex justify-between items-center">

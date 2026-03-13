@@ -9,6 +9,7 @@ export interface Post {
   image: string;
   readTime: string;
   keywords?: string[];
+  gallery?: string[];
 }
 
 export interface Page {

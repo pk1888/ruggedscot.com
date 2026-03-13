@@ -15,6 +15,6 @@ It also feels like "AI slop" is taking over the internet, and finding genuine, r
 
 I believe in returning to the basics. Climbing the Munros, baking my own bread, and keeping a watchful eye on the systems that try to control us.
 
-> **Disclaimer:** This site is built entirely with AI. I didn't want to use WordPress because I wanted to use Markdown for my posts and have full, total control—something current tools don't easily allow. Since I have very little coding skills, I used these new AI tools to build the frame. But make no mistake—while the code is AI, the posts and the thoughts are all real. No AI slop here.
+> **Disclaimer:** This site frame is built entirely with AI. I didn't want to use WordPress because I wanted to use Markdown for my posts and have full, total control, something current tools don't easily allow. Since I have very little coding skills, I used these new AI tools to build the frame. But make no mistake—while the code is AI, the posts and the thoughts are all real. No AI slop here.
 
 *"Stay rugged, stay vigilant."*
