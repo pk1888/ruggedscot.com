@@ -6,6 +6,7 @@ import Markdown from 'react-markdown';
 import { Helmet } from 'react-helmet-async';
 import { usePosts, cn } from '../components/Layout';
 import Gallery from '../components/Gallery';
+import VideoGallery from '../components/VideoGallery';
 
 export default function PostPage() {
   const { posts, isLoading, getPostBySlug, getRelatedPosts } = usePosts();
@@ -111,7 +112,14 @@ export default function PostPage() {
       </div>
 
       {/* Photo Gallery */}
-      {post.gallery && post.gallery.length > 0 && (
+      {post.videos && post.videos.length > 0 && (
+        <VideoGallery 
+          videos={post.videos} 
+          photos={post.gallery || []} 
+          title="Photos & Videos" 
+        />
+      )}
+      {!post.videos && post.gallery && post.gallery.length > 0 && (
         <Gallery photos={post.gallery} title="Photo Gallery" />
       )}
 

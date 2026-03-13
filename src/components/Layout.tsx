@@ -423,7 +423,18 @@ export default function Layout() {
               </div>
             </div>
             <div className="mt-12 pt-8 border-t border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-xs text-zinc-400">© {new Date().getFullYear()} RuggedScot.com. Stay rugged, stay vigilant. 🏴󠁧󠁢󠁳󠁣󠁴󠁿</p>
+              <div className="text-xs text-zinc-400 flex flex-col md:flex-row gap-4 md:gap-6">
+                <span>© {new Date().getFullYear()} RuggedScot.com. Stay rugged, stay vigilant. 🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+                <span className="flex items-center gap-2">
+                  Built with 
+                  <a href="https://react.dev" target="_blank" rel="noopener noreferrer" className="hover:text-loch transition-colors">React</a>
+                  <span className="text-zinc-500">+</span>
+                  <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer" className="hover:text-loch transition-colors">Vite</a>
+                  <span className="text-zinc-500">•</span>
+                  Written in 
+                  <a href="https://www.markdownguide.org" target="_blank" rel="noopener noreferrer" className="hover:text-loch transition-colors">Markdown</a>
+                </span>
+              </div>
               <div className="flex gap-6 text-xs text-zinc-400">
                 <Link to="/" className="hover:text-loch transition-colors">Home</Link>
                 <Link to="/blog" className="hover:text-loch transition-colors">Blog</Link>

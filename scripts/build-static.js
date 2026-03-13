@@ -88,6 +88,8 @@ function generatePosts() {
   }
 
   const filenames = fs.readdirSync(postsDir);
+  const now = new Date();
+  
   const posts = filenames
     .filter(filename => filename.endsWith('.md'))
     .map(filename => {
@@ -101,7 +103,19 @@ function generatePosts() {
         content
       };
     })
+    .filter(post => {
+      // Only include posts whose date is in the past or today
+      const postDate = new Date(post.date);
+      return postDate <= now;
+    })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  // Log filtered posts for debugging
+  const allPosts = filenames.filter(filename => filename.endsWith('.md')).length;
+  const filteredCount = allPosts - posts.length;
+  if (filteredCount > 0) {
+    console.log(`Filtered out ${filteredCount} future posts`);
+  }
 
   fs.writeFileSync(path.join(outputDir, 'posts.json'), JSON.stringify(posts, null, 2));
   console.log(`Generated posts.json with ${posts.length} posts`);

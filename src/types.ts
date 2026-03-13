@@ -4,12 +4,13 @@ export interface Post {
   title: string;
   excerpt: string;
   content: string;
-  category: 'Travel' | 'Recipe' | 'Hill Climbing' | 'Hobbies' | 'Thoughts';
+  category: 'Travel' | 'Recipe' | 'Hill Climbing' | 'Hobbies' | 'Thoughts' | 'Adventures';
   date: string;
   image: string;
   readTime: string;
   keywords?: string[];
   gallery?: string[];
+  videos?: string[];
 }
 
 export interface Page {

@@ -136,7 +136,7 @@ export default function ArchivePage() {
           <div className="p-6 bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800">
             <h3 className="font-serif font-bold mb-4">Categories</h3>
             <div className="space-y-2">
-              {['Travel', 'Hill Climbing', 'Recipe', 'Hobbies'].map(cat => {
+              {Array.from(new Set(posts.map(p => p.category))).sort().map(cat => {
                 const count = posts.filter(p => p.category === cat).length;
                 return count > 0 ? (
                   <Link
