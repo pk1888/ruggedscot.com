@@ -164,6 +164,13 @@ export default function PostPage() {
           </div>
         </div>
       )}
+
+      {/* Motto */}
+      <div className="mt-12 text-center">
+        <p className="text-2xl md:text-3xl font-serif font-bold text-zinc-700 dark:text-zinc-300 leading-relaxed pb-4">
+          "Stay rugged, stay vigilant."
+        </p>
+      </div>
     </motion.div>
   );
 }
