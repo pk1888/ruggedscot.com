@@ -78,58 +78,25 @@ export default function ContactPage() {
           <Markdown>{page.content}</Markdown>
         </div>
 
-        {page.has_form && (
-          <form
-            onSubmit={(e) => { e.preventDefault(); alert('Message sent into the ether. Paul will find it.'); }}
-            className="space-y-6 bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800"
-          >
-            <h3 className="font-serif font-bold text-xl mb-6">Send a Message</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-zinc-400">Your Name</label>
-                <input
-                  required
-                  type="text"
-                  placeholder="John Doe"
-                  className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-loch outline-none transition-all"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-zinc-400">Email Address</label>
-                <input
-                  required
-                  type="email"
-                  placeholder="john@example.com"
-                  className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-loch outline-none transition-all"
-                />
-              </div>
+        <div className="bg-white dark:bg-zinc-900 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <h3 className="font-serif font-bold text-xl mb-6">Get in Touch</h3>
+          <div className="space-y-4">
+            <p className="text-zinc-600 dark:text-zinc-400">
+              For any questions, collaborations, or just to say hello, reach out directly:
+            </p>
+            <div className="text-center">
+              <a 
+                href="mailto:pals@ruggedscot.com" 
+                className="text-2xl font-serif font-bold text-loch hover:text-loch/80 transition-colors"
+              >
+                pals@ruggedscot.com
+              </a>
             </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-zinc-400">Subject</label>
-              <input
-                required
-                type="text"
-                placeholder="Munro Climbing / Recipe Question"
-                className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-loch outline-none transition-all"
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-zinc-400">Your Message</label>
-              <textarea
-                required
-                rows={6}
-                placeholder="What's on your mind?"
-                className="w-full bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-loch outline-none transition-all resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-loch text-white font-bold py-4 rounded-xl hover:bg-loch/90 transition-all shadow-lg shadow-loch/20"
-            >
-              Send Message
-            </button>
-          </form>
-        )}
+            <p className="text-sm text-zinc-500 dark:text-zinc-400 text-center">
+              I'll get back to ye as soon as I can!
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Motto */}

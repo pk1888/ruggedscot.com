@@ -5,10 +5,10 @@ description: "Connect with Paul from RuggedScot. Reach out to discuss Munros, re
 hero_image: "https://images.unsplash.com/photo-1529963183134-61a90db47eaf?q=80&w=2000&auto=format&fit=crop"
 quote: "Connecting with like-minded souls across the rugged landscapes and digital divides."
 slug: "contact"
-has_form: true
+has_form: false
 ---
 
-Whether you want to talk Munros, bread, or the state of the world, I'm always open to hearing from like-minded folk.
+Feel free to reach out directly via email. I'm always happy to hear from fellow rugged souls!
 
 ## Correspondence
 
