@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { Search, Filter } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
@@ -69,12 +69,85 @@ const scottishWords: ScottishWord[] = [
   { word: "Dreich", meaning: "Cold, grey miserable weather", category: "Weather" },
   { word: "Baltic", meaning: "Freezing cold", example: "It's fucking baltic out the day.", category: "Weather" },
   { word: "Blawin a hoolie", meaning: "Very windy", category: "Weather" },
+  { word: "Chucking it down", meaning: "Raining heavily", category: "Weather" },
+  { word: "Mochit", meaning: "Damp, humid weather", category: "Weather" },
+  { word: "Snell", meaning: "Bitingly cold wind", category: "Weather" },
   
   // Slang Expressions
   { word: "Aff his tits", meaning: "High on drugs", example: "He's aff his tits.", category: "Slang" },
   { word: "A pure tit", meaning: "Being a complete idiot", example: "He's a pure tit.", category: "Slang" },
   { word: "Ya wee dick", meaning: "Casual greeting among friends", example: "Awrite, ya wee dick?", category: "Slang" },
   { word: "Och / Uch", meaning: "Expression of frustration or dismissal", example: "Uch, away ye go.", category: "Slang" },
+  { word: "Get it up ye", meaning: "Victory taunt / go for it", category: "Slang" },
+  { word: "Away and bile yer heid", meaning: "Go away and boil your head", category: "Slang" },
+  { word: "Haud yer wheesht", meaning: "Be quiet", category: "Slang" },
+  { word: "Yer bum's oot the windae", meaning: "You're talking nonsense", category: "Slang" },
+  { word: "Don't be a fanny", meaning: "Don't be stupid", category: "Slang" },
+  { word: "Pure mental", meaning: "Completely crazy", example: "That was pure mental.", category: "Slang" },
+  { word: "Sound as a pound", meaning: "Very good/reliable", category: "Slang" },
+  { word: "Minter", meaning: "Excellent/great", example: "That's minter!", category: "Slang" },
+  
+  // More Common Words
+  { word: "Bonnie", meaning: "Beautiful/pretty", example: "What a bonnie lass.", category: "Common" },
+  { word: "Kilt", meaning: "Traditional Scottish garment", category: "Common" },
+  { word: "Haver", meaning: "Talk nonsense", example: "Stop havering!", category: "Common" },
+  { word: "Bide", meaning: "Wait/stay", example: "Bide a wee minute.", category: "Common" },
+  { word: "Fash", meaning: "Bother/trouble", example: "Dinnae fash yersel.", category: "Common" },
+  { word: "Pish", meaning: "Nonsense/rubbish", example: "That's a load of pish.", category: "Common" },
+  { word: "Canny", meaning: "Clever/careful", example: "Be canny with that.", category: "Common" },
+  { word: "Muckle", meaning: "Large/big", example: "A muckle great dog.", category: "Common" },
+  { word: "Wee", meaning: "Small/little", example: "Just a wee dram.", category: "Common" },
+  
+  // More Food Words
+  { word: "Cullen Skink", meaning: "Smoked haddock soup", category: "Food" },
+  { word: "Cranachan", meaning: "Traditional dessert with oats", category: "Food" },
+  { word: "Haggis", meaning: "Traditional Scottish dish", category: "Food" },
+  { word: "Clydebank", meaning: "Type of bread roll", category: "Food" },
+  { word: "Morning roll", meaning: "Breakfast bread roll", category: "Food" },
+  { word: "Square sausage", meaning: "Lorne sausage", category: "Food" },
+  { word: "Tablet", meaning: "Scottish confectionery", category: "Food" },
+  { word: "Shortbread", meaning: "Buttery biscuit", category: "Food" },
+  { word: "Irn Bru", meaning: "Scotland's national soft drink", example: "Fancy an Irn Bru?", category: "Food" },
+  
+  // More Insults
+  { word: "Glaikit", meaning: "Stupid/foolish", example: "That glaikit look.", category: "Insults" },
+  { word: "Sassenach", meaning: "English person (derogatory)", category: "Insults" },
+  { word: "Teuchter", meaning: "Highlander/rural person", category: "Insults" },
+  { word: "Guttersnipe", meaning: "Vulgar person", category: "Insults" },
+  { word: "Scallywag", meaning: "Mischievous person", category: "Insults" },
+  { word: "Numptie", meaning: "Idiot (alternative spelling)", category: "Insults" },
+  
+  // More Random Words
+  { word: "Sassenach", meaning: "English person", category: "Random" },
+  { word: "Teuchter", meaning: "Highland person", category: "Random" },
+  { word: "Weegie", meaning: "Person from Glasgow", category: "Random" },
+  { word: "Fifer", meaning: "Person from Fife", category: "Random" },
+  { word: "Dundonian", meaning: "Person from Dundee", category: "Random" },
+  { word: "Aberdonian", meaning: "Person from Aberdeen", category: "Random" },
+  { word: "Boggin", meaning: "Dirty/disgusting", category: "Random" },
+  { word: "Bampot", meaning: "Crazy person", category: "Random" },
+  { word: "Ned", meaning: "Chav/troublemaker", category: "Random" },
+  { word: "Toerag", meaning: "Despicable person", category: "Random" },
+  { word: "Swither", meaning: "To hesitate/undecided", category: "Random" },
+  { word: "Puggled", meaning: "Drunk", category: "Random" },
+  { word: "Wabbit", meaning: "Tired/exhausted", category: "Random" },
+  { word: "Fankle", meaning: "Tangled/mess", category: "Random" },
+  { word: "Gallus", meaning: "Bold/confident", category: "Random" },
+  { word: "Peely-wally", meaning: "Pale/sickly", category: "Random" },
+  { word: "Clarty", meaning: "Dirty/muddy", category: "Random" },
+  { word: "Drookit", meaning: "Soaking wet", category: "Random" },
+  { word: "Brass neck", meaning: "Shameless", category: "Random" },
+  { word: "Mony", meaning: "Many", category: "Random" },
+  { word: "Nae", meaning: "No", category: "Random" },
+  { word: "Aboot", meaning: "About", category: "Random" },
+  { word: "Cannae", meaning: "Cannot", category: "Random" },
+  { word: "Wullnae", meaning: "Will not", category: "Random" },
+  { word: "Didnae", meaning: "Did not", category: "Random" },
+  { word: "Shouldnae", meaning: "Should not", category: "Random" },
+  { word: "Wouldnae", meaning: "Would not", category: "Random" },
+  { word: "Couldnae", meaning: "Could not", category: "Random" },
+  { word: "Mightnae", meaning: "Might not", category: "Random" },
+  { word: "Mustnae", meaning: "Must not", category: "Random" },
 ];
 
 const categories = ["All", "Common", "Everyday", "Food", "Insults", "Random", "Weather", "Slang"];
@@ -83,12 +156,25 @@ export default function TheLingoPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const filteredWords = scottishWords.filter(word => {
-    const matchesSearch = word.word.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         word.meaning.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'All' || word.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const filteredWords = useMemo(() => {
+    if (!searchTerm && selectedCategory === 'All') return scottishWords;
+    
+    const searchLower = searchTerm.toLowerCase().trim();
+    
+    return scottishWords.filter(word => {
+      const matchesCategory = selectedCategory === 'All' || word.category === selectedCategory;
+      
+      if (!searchLower) return matchesCategory;
+      
+      const matchesSearch = 
+        word.word.toLowerCase().includes(searchLower) ||
+        word.meaning.toLowerCase().includes(searchLower) ||
+        (word.example && word.example.toLowerCase().includes(searchLower)) ||
+        word.category.toLowerCase().includes(searchLower);
+      
+      return matchesSearch && matchesCategory;
+    });
+  }, [searchTerm, selectedCategory]);
 
   return (
     <motion.div
@@ -188,12 +274,9 @@ export default function TheLingoPage() {
 
       {/* Words Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {filteredWords.map((word, index) => (
-          <motion.div
-            key={word.word}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: index * 0.02, duration: 0.3 }}
+        {filteredWords.map((word) => (
+          <div
+            key={`${word.word}-${searchTerm}`}
             className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 hover:shadow-lg transition-shadow"
           >
             <div className="flex items-start justify-between mb-2">
@@ -212,7 +295,7 @@ export default function TheLingoPage() {
                 Example: "{word.example}"
               </p>
             )}
-          </motion.div>
+          </div>
         ))}
       </div>
 
