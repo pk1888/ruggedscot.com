@@ -66,7 +66,7 @@ export default function HomePage() {
         {/* Top Right Badge */}
         <div className="absolute top-4 right-4">
           <span className="inline-block px-2 py-0.5 bg-sky-500 text-white text-[10px] font-bold uppercase tracking-widest rounded-full shadow-lg">
-            Easily offended? 🖕 Fuck off!
+            Easily offended? Maybe this isn't the place for you.
           </span>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-12">
