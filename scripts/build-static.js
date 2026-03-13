@@ -104,9 +104,18 @@ function generatePosts() {
       };
     })
     .filter(post => {
-      // Only include posts whose date is in the past or today
+      // Check if we're in development mode (allow future posts) or production mode (filter future posts)
+      const isDevelopment = process.env.NODE_ENV === 'development' || process.env.DEV_MODE === 'true';
       const postDate = new Date(post.date);
-      return postDate <= now;
+      
+      if (isDevelopment) {
+        // In development, show all posts including future ones
+        return true;
+      } else {
+        // In production, only include posts whose date is in the past or today
+        const now = new Date();
+        return postDate <= now;
+      }
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
