@@ -412,22 +412,24 @@ export default function Layout() {
                   Documenting the rugged life in the west. From Munro peaks to the kitchen oven, I share my journey of returning to basics and staying vigilant in an increasingly controlled world.
                 </p>
               </div>
-              <div>
-                <h5 className="font-serif font-bold mb-4">Explore</h5>
-                <ul className="space-y-2 text-sm text-zinc-500 dark:text-zinc-400 font-light">
-                  <li><Link to="/blog" className="hover:text-loch transition-colors">All Chronicles</Link></li>
-                  <li><Link to="/archive" className="hover:text-loch transition-colors">Archive</Link></li>
-                  <li><Link to="/about" className="hover:text-loch transition-colors">About</Link></li>
-                  <li><Link to="/contact" className="hover:text-loch transition-colors">Contact</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h5 className="font-serif font-bold mb-4">Connect</h5>
-                <ul className="space-y-2 text-sm text-zinc-500 dark:text-zinc-400 font-light">
-                  <li><a href="/rss.xml" className="hover:text-loch transition-colors flex items-center gap-2"><Rss size={14} /> RSS Feed</a></li>
-                  <li><a href="#" className="hover:text-loch transition-colors">Instagram</a></li>
-                  <li><a href="#" className="hover:text-loch transition-colors">Twitter</a></li>
-                </ul>
+              <div className="flex flex-col md:flex-row gap-8 md:gap-16 col-span-1 md:col-span-2">
+                <div>
+                  <h5 className="font-serif font-bold mb-4">Explore</h5>
+                  <ul className="flex flex-row md:flex-col gap-4 md:gap-2 text-sm text-zinc-500 dark:text-zinc-400 font-light">
+                    <li><Link to="/blog" className="hover:text-loch transition-colors">All Chronicles</Link></li>
+                    <li><Link to="/archive" className="hover:text-loch transition-colors">Archive</Link></li>
+                    <li><Link to="/about" className="hover:text-loch transition-colors">About</Link></li>
+                    <li><Link to="/contact" className="hover:text-loch transition-colors">Contact</Link></li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-serif font-bold mb-4">Connect</h5>
+                  <ul className="flex flex-row md:flex-col gap-4 md:gap-2 text-sm text-zinc-500 dark:text-zinc-400 font-light">
+                    <li><a href="/rss.xml" className="hover:text-loch transition-colors flex items-center gap-2"><Rss size={14} /> RSS Feed</a></li>
+                    <li><a href="#" className="hover:text-loch transition-colors">Instagram</a></li>
+                    <li><a href="#" className="hover:text-loch transition-colors">Twitter</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div className="mt-12 pt-8 border-t border-zinc-100 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
