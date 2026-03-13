@@ -76,7 +76,7 @@ export default function BlogPage() {
 
       {/* Category Pills */}
       <div className="flex flex-wrap gap-2 mb-8">
-        {['All', 'Travel', 'Hill Climbing', 'Thoughts', 'Recipe', 'Hobbies'].map(cat => (
+        {['All', 'Travel', 'Hill Climbing', 'Thoughts', 'Memories', 'Recipe', 'Hobbies'].map(cat => (
           <button
             key={cat}
             onClick={() => {
