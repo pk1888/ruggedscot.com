@@ -183,6 +183,7 @@ export default function Layout() {
       ]
     },
     { label: 'Archive', path: '/archive' },
+    { label: 'Subscribe', path: '/subscribe' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' }
   ];

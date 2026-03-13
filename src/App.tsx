@@ -9,6 +9,7 @@ import ArchivePage from './pages/ArchivePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import TagPage from './pages/TagPage';
+import MailingListPage from './pages/MailingListPage';
 
 function RedirectHandler() {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ export default function App() {
             <Route path="tag/:tag" element={<TagPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="subscribe" element={<MailingListPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
