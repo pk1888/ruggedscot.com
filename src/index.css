@@ -9,7 +9,6 @@
   --color-loch: #005eb8;
 }
 
-/* Tailwind v4 class-based dark mode support */
 @variant dark (&:where(.dark, .dark *));
 
 @layer base {

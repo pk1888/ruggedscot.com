@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, CheckCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 export default function MailingListPage() {
@@ -18,7 +18,6 @@ export default function MailingListPage() {
       return;
     }
 
-    // Store in localStorage for now (no backend yet)
     const subscribers = JSON.parse(localStorage.getItem('subscribers') || '[]');
     
     if (subscribers.some((sub: { email: string }) => sub.email === email)) {
@@ -134,7 +133,6 @@ export default function MailingListPage() {
                   animate={{ opacity: 1, y: 0 }}
                   className="flex items-center gap-2 text-red-600 dark:text-red-400 text-sm"
                 >
-                  <AlertCircle size={16} />
                   <span>{message}</span>
                 </motion.div>
               )}
