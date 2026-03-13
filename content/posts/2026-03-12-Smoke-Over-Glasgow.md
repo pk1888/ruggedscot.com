@@ -27,10 +27,11 @@ I don’t get into Glasgow much these days. I tend to avoid cities now because c
 
 And I’ll be honest, one of the daft things I’ll miss most is the Blue Lagoon chippy. It was one of those classic spots to grab something to eat after being in town. A lot of folk will have memories tied to that place for sure.
 
-What makes it all worse is the idea that something so major may have started from something so small and stupid. A fire like that wiping out a 175 year old building is hard to get your head around. For anyone who doesn't know, It was a Vape shop that caused the fire. I doubt we'll ever find out the fulfl truth.
+What makes it all worse is the idea that something so major may have started from something so small and stupid. A fire like that wiping out a 175 year old building is hard to get your head around. For anyone who doesn't know, It was a vape shop that caused the fire. I doubt we'll ever find out the full truth.
 
 It’s frustrating, because when a building has stood that long, you expect better care, better standards, and better accountability.
 
 That’s the part that really gets me. Glasgow keeps losing pieces of itself, and once they’re gone, they’re gone. These old buildings carry history, memories, and character that can’t just be replaced with another bland unit or boarded up shell.
 
 It’s a real shame and a real loss for the city.
+Strange how places you barely think about end up being the ones you remember the most.
