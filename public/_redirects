@@ -1,2 +1,5 @@
 # Netlify redirects for SPA fallback
 /* /index.html 200
+
+# Specific redirects
+/lingo /index.html 200
