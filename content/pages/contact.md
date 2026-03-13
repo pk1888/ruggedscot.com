@@ -2,7 +2,7 @@
 title: "Reach Out to Paul"
 subtitle: "Open Correspondence"
 description: "Connect with Paul from RuggedScot. Reach out to discuss Munros, recipes, or the state of the world."
-hero_image: "https://images.unsplash.com/photo-1529963183134-61a90db47eaf?q=80&w=2000&auto=format&fit=crop"
+hero_image: "/images/contact.png"
 quote: "Connecting with like-minded souls across the rugged landscapes and digital divides."
 slug: "contact"
 has_form: false
@@ -22,4 +22,4 @@ I check my messages between the morning bake and the afternoon hike. I'll get ba
 
 ## Send a Message
 
-Use the form below to send me a message. Whether it's about climbing, baking, or just sharing your thoughts on the state of the world, I read every message.
+Reach out directly via email at pals@ruggedscot.com. Whether it's about climbing, baking, or just sharing your thoughts on the state of the world, I read every message.
