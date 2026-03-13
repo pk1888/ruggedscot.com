@@ -51,8 +51,9 @@ export default function BlogPage() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
       className="max-w-[1160px] mx-auto"
     >
       <Helmet>
@@ -104,9 +105,9 @@ export default function BlogPage() {
           {paginatedPosts.map((post, idx) => (
             <motion.article
               key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: idx * 0.1, duration: 0.3 }}
               className="group"
             >
               <Link to={`/blog/${post.slug || post.id}`} className="block">

@@ -80,8 +80,9 @@ export default function HomePage() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
     >
       <Helmet>
         <title>RuggedScot | Chronicles of the West</title>
@@ -116,9 +117,9 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-12">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
           >
             <span className="inline-block px-2.5 py-0.5 bg-loch text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">
               Welcome
@@ -172,9 +173,9 @@ export default function HomePage() {
         {paginatedPosts.map((post, idx) => (
           <motion.article
             key={post.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: idx * 0.1, duration: 0.3 }}
             className="group"
           >
             <Link to={`/blog/${post.slug || post.id}`} className="block">

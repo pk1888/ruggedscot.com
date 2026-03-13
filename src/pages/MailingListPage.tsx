@@ -42,8 +42,9 @@ export default function MailingListPage() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
       className="max-w-2xl mx-auto"
     >
       <Helmet>
@@ -85,8 +86,8 @@ export default function MailingListPage() {
       <div className="relative max-w-xl mx-auto">
         {/* Coming Soon Notice */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
           className="text-center mb-8 p-6 bg-zinc-100 dark:bg-zinc-800 rounded-xl border-2 border-dashed border-zinc-300 dark:border-zinc-600"
         >
