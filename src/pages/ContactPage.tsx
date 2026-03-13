@@ -39,6 +39,26 @@ export default function ContactPage() {
       <Helmet>
         <title>{page.title} | RuggedScot</title>
         <meta name="description" content={page.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${page.title} | RuggedScot`} />
+        <meta property="og:description" content={page.description} />
+        <meta property="og:image" content={page.hero_image || "https://ruggedscot.com/images/contact.png"} />
+        <meta property="og:url" content={`https://ruggedscot.com/contact`} />
+        <meta property="og:site_name" content="RuggedScot" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${page.title} | RuggedScot`} />
+        <meta name="twitter:description" content={page.description} />
+        <meta name="twitter:image" content={page.hero_image || "https://ruggedscot.com/images/contact.png"} />
+        <link rel="canonical" href="https://ruggedscot.com/contact" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": page.title,
+            "description": page.description,
+            "url": "https://ruggedscot.com/contact"
+          })}
+        </script>
       </Helmet>
 
       {page.hero_image && (

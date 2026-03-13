@@ -48,7 +48,27 @@ export default function MailingListPage() {
     >
       <Helmet>
         <title>Join the Mailing List | RuggedScot</title>
-        <meta name="description" content="Subscribe to receive updates from the rugged west. Chronicles, recipes, and adventures delivered to your inbox." />
+        <meta name="description" content="Subscribe fur updates from RuggedScot! Chronicles, recipes, and adventures delivered straight to yer inbox. Join ma mailing list fur the latest Scottish content." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Join the Mailing List | RuggedScot" />
+        <meta property="og:description" content="Subscribe fur updates from RuggedScot! Chronicles, recipes, and adventures delivered straight to yer inbox." />
+        <meta property="og:image" content="https://ruggedscot.com/images/home-hero.png" />
+        <meta property="og:url" content="https://ruggedscot.com/subscribe" />
+        <meta property="og:site_name" content="RuggedScot" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Join the Mailing List | RuggedScot" />
+        <meta name="twitter:description" content="Subscribe fur updates from RuggedScot! Chronicles, recipes, and adventures delivered straight to yer inbox." />
+        <meta name="twitter:image" content="https://ruggedscot.com/images/home-hero.png" />
+        <link rel="canonical" href="https://ruggedscot.com/subscribe" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Join the Mailing List",
+            "description": "Subscribe fur updates from RuggedScot! Chronicles, recipes, and adventures delivered straight to yer inbox.",
+            "url": "https://ruggedscot.com/subscribe"
+          })}
+        </script>
       </Helmet>
 
       {/* Header */}

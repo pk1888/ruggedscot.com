@@ -98,14 +98,39 @@ export default function TheLingoPage() {
     >
       <Helmet>
         <title>The Lingo | Scottish Words & Phrases | RuggedScot</title>
-        <meta name="description" content="A comprehensive database of Scottish words, phrases, and slang. From everyday words to insults, learn the language of Scotland." />
+        <meta name="description" content="Awrite ya wee fannies! Learn Scottish slang and phrases. From 'Pure pishing doon' to 'Taps aff weather', master the Scottish lingo with our comprehensive guide." />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="The Lingo | Scottish Words & Phrases | RuggedScot" />
+        <meta property="og:description" content="Awrite ya wee fannies! Learn Scottish slang and phrases. From 'Pure pishing doon' to 'Taps aff weather', master the Scottish lingo with our comprehensive guide." />
+        <meta property="og:image" content="https://ruggedscot.com/images/home-hero.png" />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="720" />
+        <meta property="og:url" content="https://ruggedscot.com/lingo" />
+        <meta property="og:site_name" content="RuggedScot" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The Lingo | Scottish Words & Phrases | RuggedScot" />
+        <meta name="twitter:description" content="Awrite ya wee fannies! Learn Scottish slang and phrases. From 'Pure pishing doon' to 'Taps aff weather', master the Scottish lingo." />
+        <meta name="twitter:image" content="https://ruggedscot.com/images/home-hero.png" />
+        <meta name="keywords" content="scottish words, scottish slang, scots language, scottish phrases, scotland culture, scottish expressions, scottish lingo, glasgow slang, edinburgh slang, scottish dictionary" />
+        <link rel="canonical" href="https://ruggedscot.com/lingo" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "The Lingo - Scottish Words & Phrases",
-            "description": "A comprehensive database of Scottish words, phrases, and slang.",
-            "url": "https://ruggedscot.com/lingo"
+            "description": "A comprehensive database of Scottish words, phrases, and slang. Learn authentic Scottish expressions and phrases.",
+            "url": "https://ruggedscot.com/lingo",
+            "mainEntity": {
+              "@type": "ItemList",
+              "name": "Scottish Words and Phrases",
+              "description": "Collection of Scottish slang words and phrases with meanings and examples",
+              "numberOfItems": scottishWords.length
+            },
+            "about": {
+              "@type": "Thing",
+              "name": "Scottish Language",
+              "description": "Scots language and Scottish slang expressions"
+            }
           })}
         </script>
       </Helmet>
