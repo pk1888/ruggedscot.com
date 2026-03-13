@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Calendar, Clock, ChevronRight, ChevronLeft, Map } from 'lucide-react';
+import { Calendar, Clock, ChevronRight, ChevronLeft, Map, Cloud, Sun, CloudRain, Wind, Snowflake } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { usePosts, cn } from '../components/Layout';
 
@@ -11,10 +11,55 @@ export default function HomePage() {
   const { posts, isLoading } = usePosts();
   const [currentPage, setCurrentPage] = useState(1);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [weather, setWeather] = useState<{ temp: number; phrase: string; icon: React.ReactNode } | null>(null);
+
+  // Weather code to Scottish phrase mapping
+  const getScottishWeather = (code: number, temp: number) => {
+    // WMO Weather interpretation codes (WW)
+    if (code === 0) return { phrase: temp > 15 ? "Taps aff weather" : "Braw day oot", icon: <Sun size={16} className="text-yellow-400" /> };
+    if (code >= 1 && code <= 3) return { phrase: "Bit grey but no bad", icon: <Cloud size={16} className="text-zinc-400" /> };
+    if (code >= 45 && code <= 48) return { phrase: "Can’t see hee haw", icon: <Cloud size={16} className="text-zinc-500" /> };
+    if (code >= 51 && code <= 55) return { phrase: "Bit dreich the day", icon: <CloudRain size={16} className="text-blue-400" /> };
+    if (code >= 61 && code <= 65) return { phrase: "Pure pishing doon", icon: <CloudRain size={16} className="text-blue-500" /> };
+    if (code >= 71 && code <= 77) return { phrase: "Pure baltic oot there", icon: <Snowflake size={16} className="text-white" /> };
+    if (code >= 80 && code <= 82) return { phrase: "Pure pishing doon", icon: <CloudRain size={16} className="text-blue-500" /> };
+    if (code >= 85 && code <= 86) return { phrase: "Snowing like buggery", icon: <Snowflake size={16} className="text-white" /> };
+    if (code >= 95 && code <= 99) return { phrase: "Blawin a hoolie", icon: <Wind size={16} className="text-zinc-300" /> };
+    return { phrase: "Bit unpredictable", icon: <Cloud size={16} className="text-zinc-400" /> };
+  };
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
+  }, []);
+
+  // Fetch weather from Open-Meteo
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        // Glasgow coordinates
+        const response = await fetch(
+          'https://api.open-meteo.com/v1/forecast?latitude=55.8642&longitude=-4.2518&current_weather=true'
+        );
+        const data = await response.json();
+        const current = data.current_weather;
+        const scottish = getScottishWeather(current.weathercode, current.temperature);
+        
+        setWeather({
+          temp: Math.round(current.temperature),
+          phrase: scottish.phrase,
+          icon: scottish.icon
+        });
+      } catch (error) {
+        console.error('Weather fetch failed:', error);
+        setWeather({ temp: 0, phrase: "Couldnae get the weather", icon: <Cloud size={16} /> });
+      }
+    };
+
+    fetchWeather();
+    // Update weather every 10 minutes
+    const weatherTimer = setInterval(fetchWeather, 600000);
+    return () => clearInterval(weatherTimer);
   }, []);
 
   if (isLoading) {
@@ -84,7 +129,15 @@ export default function HomePage() {
             <p className="text-zinc-200 text-base max-w-xl mb-6 font-light flex flex-col gap-2">
               <span className="flex items-center gap-2">
                 <Clock size={16} className="text-loch" />
-                {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })} — Chronicles of a life lived with purpose.
+                {currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })} — 
+                {weather ? (
+                  <span className="flex items-center gap-1">
+                    {weather.icon}
+                    {weather.temp}°C — {weather.phrase}
+                  </span>
+                ) : (
+                  "Loading weather..."
+                )}
               </span>
               <span className="flex items-center gap-2 text-sm text-zinc-400">
                 <Map size={14} className="text-loch" />

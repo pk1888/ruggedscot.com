@@ -180,6 +180,7 @@ export default function Layout() {
       children: [
         { label: 'Recipes', path: '/blog?category=Recipe' },
         { label: 'Hobbies', path: '/blog?category=Hobbies' },
+        { label: 'The Lingo', path: '/lingo' },
       ]
     },
     { label: 'Archive', path: '/archive' },
