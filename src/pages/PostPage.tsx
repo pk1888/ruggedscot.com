@@ -98,7 +98,7 @@ export default function PostPage() {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-black/75 flex flex-col justify-end p-6 md:p-12">
+        <div className="absolute inset-0 bg-black/65 flex flex-col justify-end p-6 md:p-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
