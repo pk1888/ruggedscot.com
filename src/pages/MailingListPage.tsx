@@ -54,14 +54,11 @@ export default function MailingListPage() {
 
       {/* Header */}
       <div className="text-center mb-12">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-loch/10 rounded-full mb-6">
-          <Mail size={28} className="text-loch" />
-        </div>
         <h1 className="text-3xl md:text-4xl font-serif font-bold italic mb-4">
-          Join the Mailing List
+          Join ma Mailing List!
         </h1>
         <p className="text-zinc-500 dark:text-zinc-400 max-w-md mx-auto">
-          Subscribe to receive updates from the rugged west. Chronicles, recipes, and adventures delivered straight to your inbox.
+          Subscribe fur updates from RuggedScot! Chronicles, recipes, and adventures delivered straight to yer inbox.
         </p>
       </div>
 
@@ -78,7 +75,7 @@ export default function MailingListPage() {
             Coming Soon
           </h2>
           <p className="text-zinc-500 dark:text-zinc-400">
-            The mailing list is not active yet. Check back soon to subscribe for updates from the rugged west!
+            The mailing list is naw active yet. Check back soon to subscribe fur updates from RuggedScot!
           </p>
         </motion.div>
 
@@ -154,22 +151,6 @@ export default function MailingListPage() {
               </p>
             </form>
           )}
-        </div>
-      </div>
-
-      {/* Benefits */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="text-center p-6">
-          <div className="text-2xl font-serif font-bold text-loch mb-2">New Chronicles</div>
-          <p className="text-sm text-zinc-500">Be the first to read new adventures and stories.</p>
-        </div>
-        <div className="text-center p-6">
-          <div className="text-2xl font-serif font-bold text-loch mb-2">Recipes</div>
-          <p className="text-sm text-zinc-500">Get traditional recipes and cooking tips.</p>
-        </div>
-        <div className="text-center p-6">
-          <div className="text-2xl font-serif font-bold text-loch mb-2">Munro Updates</div>
-          <p className="text-sm text-zinc-500">Follow along with hill climbing progress.</p>
         </div>
       </div>
 
