@@ -43,8 +43,16 @@ export default function HomePage() {
         <meta name="description" content="A digital journal documenting life in the rugged west. From the peaks of the Munros to the warmth of a kitchen oven." />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="RuggedScot | Chronicles of the West" />
-        <meta property="og:description" content="A digital journal documenting life in the rugged west." />
-        <meta property="og:image" content="/images/home-hero.png" />
+        <meta property="og:description" content="A digital journal documenting life in the rugged west. Chronicles, recipes, and adventures from Scotland." />
+        <meta property="og:image" content="https://ruggedscot.com/images/home-hero.png" />
+        <meta property="og:image:width" content="1280" />
+        <meta property="og:image:height" content="720" />
+        <meta property="og:url" content="https://ruggedscot.com" />
+        <meta property="og:site_name" content="RuggedScot" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="RuggedScot | Chronicles of the West" />
+        <meta name="twitter:description" content="A digital journal documenting life in the rugged west. Chronicles, recipes, and adventures from Scotland." />
+        <meta name="twitter:image" content="https://ruggedscot.com/images/home-hero.png" />
       </Helmet>
 
       {/* Hero Section */}

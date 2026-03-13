@@ -38,6 +38,23 @@ export default function AboutPage() {
       <Helmet>
         <title>{page.title} | RuggedScot</title>
         <meta name="description" content={page.description} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Paul",
+            "description": "A 42-year-old from Scotland sharing his views on the world through RuggedScot.",
+            "url": "https://ruggedscot.com/about",
+            "image": "https://ruggedscot.com/images/about-me.jpg",
+            "jobTitle": "Writer, Blogger",
+            "sameAs": [
+              "https://ruggedscot.com"
+            ],
+            "knowsAbout": [
+              "Scotland", "Munro climbing", "Baking", "Traditional recipes", "Current affairs"
+            ]
+          })}
+        </script>
       </Helmet>
 
       {page.hero_image && (

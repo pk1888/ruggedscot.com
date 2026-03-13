@@ -52,6 +52,33 @@ export default function PostPage() {
         {post.keywords?.map(tag => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "description": post.excerpt,
+            "image": post.image,
+            "datePublished": post.date,
+            "author": {
+              "@type": "Person",
+              "name": "Paul",
+              "url": "https://ruggedscot.com/about"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "RuggedScot",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://ruggedscot.com/images/logo.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://ruggedscot.com/blog/${post.slug}`
+            }
+          })}
+        </script>
       </Helmet>
 
       <Link
