@@ -1,5 +1,5 @@
 ---
-title: "Reach Out to Paul"
+title: "Reach Out to Me"
 subtitle: "Open Correspondence"
 description: "Connect with Paul from RuggedScot. Reach out to discuss Munros, recipes, or the state of the world."
 hero_image: "/images/contact.png"
