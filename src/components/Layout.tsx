@@ -217,6 +217,7 @@ export default function Layout() {
       children: [
         { label: 'About', path: '/about' },
         { label: 'Contact', path: '/contact' },
+        { label: 'Link Exchange', path: '/link-exchange' },
         { label: 'Subscribe', path: '/subscribe' },
       ]
     }

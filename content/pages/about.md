@@ -2,7 +2,7 @@
 title: "The Rugged Scot"
 subtitle: "The Voice of the West"
 description: "Meet Paul, the voice behind RuggedScot. A 42-year-old from Scotland sharing his views on the world."
-hero_image: "/images/about-me.jpg"
+hero_image: "/images/about-me.webp"
 quote: "Chronicles of a life lived with purpose, from the banks of the Clyde to the highest Munros."
 slug: "about"
 ---

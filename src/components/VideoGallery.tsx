@@ -42,7 +42,6 @@ export default function VideoGallery({ videos, photos, title }: VideoGalleryProp
                 <>
                   <video
                     src={media}
-                    poster="/images/blogs/ben-nevis/ben-nevis-1.jpg"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     muted
                     playsInline

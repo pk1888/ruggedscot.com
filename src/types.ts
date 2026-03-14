@@ -4,13 +4,14 @@ export interface Post {
   title: string;
   excerpt: string;
   content: string;
-  category: 'Travel' | 'Recipe' | 'Hill Climbing' | 'Hobbies' | 'Thoughts' | 'Adventures';
+  category: 'Travel' | 'Recipe' | 'Hill Climbing' | 'Hobbies' | 'Thoughts' | 'Adventures' | 'Memories';
   date: string;
   image: string;
   readTime: string;
   keywords?: string[];
   gallery?: string[];
   videos?: string[];
+  galleryinline?: Record<string, string[]>; // Support multiple named galleries
 }
 
 export interface Page {

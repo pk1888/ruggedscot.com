@@ -7,8 +7,8 @@ category: "Scotland"
 date: "2026-03-15"
 author: "Paul"
 location: "Scotland"
-image: "/images/blogs/scottish-words/scottish-words.png"
-readTime: "6 min read"
+image: "/images/blogs/scottish-words/scottish-words.webp"
+readTime: "5 min read"
 keywords: ["scottish words", "scottish slang", "scots language", "scottish phrases", "scotland culture", "scottish expressions"]
 ---
 

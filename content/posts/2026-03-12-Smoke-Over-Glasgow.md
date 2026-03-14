@@ -4,13 +4,13 @@ slug: "smoke-over-glasgow"
 excerpt: "Glasgow woke up to thick black smoke rising over Union Street after a massive fire tore through a 175-year-old building near Central Station. It’s strange seeing a place you’ve walked past a hundred times suddenly disappear overnight."
 category: "Thoughts"
 date: "2026-03-13"
-image: "/images/blogs/glasgow-fire/blog-header.jpg"
+image: "/images/blogs/glasgow-fire/blog-header.webp"
 readTime: "5 min read"
 keywords: ["glasgow", "glasgow fire", "union street", "glasgow central", "scotland", "city life", "local stories"]
 gallery:
-  - "/images/blogs/glasgow-fire/glasgow-fire-1.jpg"
-  - "/images/blogs/glasgow-fire/glasgow-fire-2.jpg"
-  - "/images/blogs/glasgow-fire/glasgow-fire-3.jpg"
+  - "/images/blogs/glasgow-fire/glasgow-fire-1.webp"
+  - "/images/blogs/glasgow-fire/glasgow-fire-2.webp"
+  - "/images/blogs/glasgow-fire/glasgow-fire-3.webp"
 ---
 
 # Smoke Over Glasgow

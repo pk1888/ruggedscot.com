@@ -5,20 +5,22 @@ excerpt: "A charity climb up Ben Nevis turned into one of the most unforgettable
 description: "Climbing Ben Nevis for charity became an unforgettable experience, from sudden zero visibility near the summit to a terrifying moment when a friend nearly walked off the edge."
 category: "Hill Climbing"
 date: "2026-03-14"
-image: "/images/blogs/ben-nevis/hero.jpg"
+image: "/images/blogs/ben-nevis/hero.webp"
 readTime: "6 min read"
 keywords: ["Ben Nevis", "climbing Ben Nevis", "Scotland mountains", "Ben Lomond training", "Ben Nevis summit", "charity climb", "Scotland hiking"]
 gallery:
-  - "/images/blogs/ben-nevis/ben-nevis-1.jpg"
-  - "/images/blogs/ben-nevis/ben-nevis-2.jpg"
-  - "/images/blogs/ben-nevis/ben-nevis-3.jpg"
-  - "/images/blogs/ben-nevis/ben-nevis-4.jpg"
-  - "/images/blogs/ben-nevis/ben-nevis-5.jpg"
-  - "/images/blogs/ben-nevis/ben-nevis-6.jpg"
-  - "/images/blogs/ben-nevis/ben-nevis-7.jpg"
-  - "/images/blogs/ben-nevis/ben-nevis-8.jpg"
+  - "/images/blogs/ben-nevis/ben-nevis-1.webp"
+  - "/images/blogs/ben-nevis/ben-nevis-2.webp"
+  - "/images/blogs/ben-nevis/ben-nevis-3.webp"
+  - "/images/blogs/ben-nevis/ben-nevis-4.webp"
+  - "/images/blogs/ben-nevis/ben-nevis-5.webp"
+  - "/images/blogs/ben-nevis/ben-nevis-6.webp"
+  - "/images/blogs/ben-nevis/ben-nevis-7.webp"
+  - "/images/blogs/ben-nevis/ben-nevis-8.webp"
 videos:
   - "/images/blogs/ben-nevis/ben-nevis-fort-william-15-may-2010_4612234465.mp4"
+  - "/images/blogs/ben-nevis/ben-nevis-fort-william-15-may-2010_4612234419 (1).mp4"
+  - "/images/blogs/ben-nevis/ben-nevis-fort-william-15-may-2010_4612236497 (1).mp4"
 ---
 
 ## The Memory

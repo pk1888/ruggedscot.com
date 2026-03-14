@@ -11,6 +11,7 @@ import ContactPage from './pages/ContactPage';
 import TagPage from './pages/TagPage';
 import MailingListPage from './pages/MailingListPage';
 import TheLingoPage from './pages/TheLingoPage';
+import LinkExchangePage from './pages/LinkExchangePage';
 
 function RedirectHandler() {
   const navigate = useNavigate();
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="tag/:tag" element={<TagPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
+            <Route path="link-exchange" element={<LinkExchangePage />} />
             <Route path="subscribe" element={<MailingListPage />} />
             <Route path="lingo" element={<TheLingoPage />} />
           </Route>

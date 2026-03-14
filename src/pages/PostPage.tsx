@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Calendar, Clock, ArrowLeft, ChevronRight } from 'lucide-react';
-import Markdown from 'react-markdown';
 import { Helmet } from 'react-helmet-async';
-import { usePosts, cn } from '../components/Layout';
+import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
+import Markdown from 'react-markdown';
 import Gallery from '../components/Gallery';
 import VideoGallery from '../components/VideoGallery';
+import GalleryInline from '../components/GalleryInline';
+import { usePosts } from '../components/Layout';
 
 export default function PostPage() {
   const { posts, isLoading, getPostBySlug, getRelatedPosts } = usePosts();
@@ -135,8 +136,24 @@ export default function PostPage() {
       </div>
 
       {/* Post Content */}
-      <div className="markdown-body prose dark:prose-invert max-w-none">
-        <Markdown>{post.content}</Markdown>
+      <div className="markdown-body max-w-none">
+        <Markdown 
+          components={{
+            code: ({node, className, children, ...props}) => {
+              const match = /language-galleryinline-(.+)/.exec(className || '');
+              if (match && post.galleryinline) {
+                const galleryName = match[1];
+                const photos = post.galleryinline[galleryName];
+                if (photos) {
+                  return <GalleryInline photos={photos} />;
+                }
+              }
+              return <code className={className} {...props}>{children}</code>;
+            }
+          }}
+        >
+          {post.content}
+        </Markdown>
       </div>
 
       {/* Photo Gallery */}

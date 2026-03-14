@@ -2,7 +2,7 @@
 title: "Reach Out to Me"
 subtitle: "Open Correspondence"
 description: "Connect with Paul from RuggedScot. Reach out to discuss Munros, recipes, or the state of the world."
-hero_image: "/images/contact.png"
+hero_image: "/images/contact.webp"
 quote: "Connecting with like-minded souls across the rugged landscapes and digital divides."
 slug: "contact"
 has_form: false
