@@ -193,53 +193,44 @@ function generateRSS(posts) {
 }
 
 // Generate sitemap
-function generateSitemap() {
+function generateSitemap(posts, pages) {
   const siteUrl = 'https://ruggedscot.com';
+  const now = new Date().toISOString();
+  
+  const staticPages = [
+    { loc: siteUrl, priority: '1.0', changefreq: 'daily' },
+    { loc: `${siteUrl}/blog`, priority: '0.9', changefreq: 'daily' },
+    { loc: `${siteUrl}/archive`, priority: '0.8', changefreq: 'weekly' },
+    { loc: `${siteUrl}/about`, priority: '0.7', changefreq: 'monthly' },
+    { loc: `${siteUrl}/contact`, priority: '0.6', changefreq: 'monthly' },
+    { loc: `${siteUrl}/subscribe`, priority: '0.6', changefreq: 'monthly' },
+    { loc: `${siteUrl}/lingo`, priority: '0.8', changefreq: 'monthly' },
+    { loc: `${siteUrl}/link-exchange`, priority: '0.7', changefreq: 'monthly' }
+  ];
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${staticPages.map(page => `
   <url>
-    <loc>${siteUrl}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
+    <loc>${page.loc}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`).join('')}
+  ${posts.map(post => `
   <url>
-    <loc>${siteUrl}/blog</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${siteUrl}/archive</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <loc>${siteUrl}/blog/${post.slug || post.id}</loc>
+    <lastmod>${new Date(post.date).toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
+  </url>`).join('')}
+  ${pages.map(page => `
   <url>
-    <loc>${siteUrl}/about</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>${siteUrl}/contact</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
+    <loc>${siteUrl}/${page.slug}</loc>
+    <lastmod>${new Date(page.date || '2026-01-01').toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>${siteUrl}/subscribe</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>${siteUrl}/lingo</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  </url>`).join('')}
 </urlset>`;
 
   fs.writeFileSync(path.join(outputDir, 'sitemap.xml'), sitemap);
@@ -262,9 +253,9 @@ function escapeXml(unsafe) {
 // Main
 console.log('Building static site data...');
 const posts = generatePosts();
-generatePages();
+const pages = generatePages();
 generateRSS(posts);
-generateSitemap();
+generateSitemap(posts, pages);
 copyImages();
 copyCNAME();
 copyNoJekyll();
